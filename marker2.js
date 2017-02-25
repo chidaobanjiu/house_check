@@ -1,0 +1,235 @@
+var provinces = [{
+	"name": "北京市",
+	"center": "116.405285,39.904989",
+	"count": 25500,
+	"subDistricts": [{
+		"name": "东城区",
+		"center": "116.418757,39.917544",
+		"count": 100
+	}, {
+		"name": "西城区",
+		"center": "116.366794,39.915309",
+		"count": 150
+	}, {
+		"name": "朝阳区",
+		"center": "116.486409,39.921489",
+		"count": 300
+	}, {
+		"name": "丰台区",
+		"center": "116.286968,39.863642",
+		"count": 250
+	}, {
+		"name": "石景山区",
+		"center": "116.195445,39.914601",
+		"count": 150
+	}, {
+		"name": "海淀区",
+		"center": "116.310316,39.956074",
+		"count": 350
+	}, {
+		"name": "门头沟区",
+		"center": "116.105381,39.937183",
+		"count": 150
+	}, {
+		"name": "房山区",
+		"center": "116.139157,39.735535",
+		"count": 100
+	}, {
+		"name": "通州区",
+		"center": "116.658603,39.902486",
+		"count": 200
+	}, {
+		"name": "顺义区",
+		"center": "116.653525,40.128936",
+		"count": 150
+	}, {
+		"name": "昌平区",
+		"center": "116.235906,40.218085",
+		"count": 250
+	}, {
+		"name": "大兴区",
+		"center": "116.338033,39.728908",
+		"count": 250
+	}, {
+		"name": "怀柔区",
+		"center": "116.637122,40.324272",
+		"count": 50
+	}, {
+		"name": "平谷区",
+		"center": "117.112335,40.144783",
+		"count": 50
+	}, {
+		"name": "密云县",
+		"center": "116.843352,40.377362",
+		"count": 100
+	}, {
+		"name": "延庆县",
+		"center": "115.985006,40.465325",
+		"count": 50
+	}]
+}, {
+	"name": "天津市",
+	"center": "117.190182,39.125596",
+	"count": 7500,
+	"subDistricts": []
+}, {
+	"name": "河北省",
+	"center": "114.502461,38.045474",
+	"count": 4500,
+	"subDistricts": []
+}, {
+	"name": "山西省",
+	"center": "112.549248,37.857014",
+	"count": 5500,
+	"subDistricts": []
+}, {
+	"name": "内蒙古自治区",
+	"center": "111.670801,40.818311",
+	"count": 2500,
+	"subDistricts": []
+}, {
+	"name": "辽宁省",
+	"center": "123.429096,41.796767",
+	"count": 2550,
+	"subDistricts": []
+}, {
+	"name": "吉林省",
+	"center": "125.3245,43.886841",
+	"count": 1500,
+	"subDistricts": []
+}, {
+	"name": "黑龙江省",
+	"center": "126.642464,45.756967",
+	"count": 1340,
+	"subDistricts": []
+}, {
+	"name": "上海市",
+	"center": "121.472644,31.231706",
+	"count": 20500,
+	"subDistricts": []
+}, {
+	"name": "江苏省",
+	"center": "118.767413,32.041544",
+	"count": 14500,
+	"subDistricts": []
+}, {
+	"name": "浙江省",
+	"center": "120.153576,30.287459",
+	"count": 19500,
+	"subDistricts": []
+}, {
+	"name": "安徽省",
+	"center": "117.283042,31.86119",
+	"count": 10500,
+	"subDistricts": []
+}, {
+	"name": "福建省",
+	"center": "119.306239,26.075302",
+	"count": 22500,
+	"subDistricts": []
+}, {
+	"name": "江西省",
+	"center": "115.892151,28.676493",
+	"count": 10500,
+	"subDistricts": []
+}, {
+	"name": "山东省",
+	"center": "117.000923,36.675807",
+	"count": 12500,
+	"subDistricts": []
+}, {
+	"name": "河南省",
+	"center": "113.665412,34.757975",
+	"count": 23300,
+	"subDistricts": []
+}, {
+	"name": "湖北省",
+	"center": "114.298572,30.584355",
+	"count": 7500,
+	"subDistricts": []
+}, {
+	"name": "湖南省",
+	"center": "112.982279,28.19409",
+	"count": 9500,
+	"subDistricts": []
+}, {
+	"name": "广东省",
+	"center": "113.280637,23.125178",
+	"count": 25450,
+	"subDistricts": []
+}, {
+	"name": "广西壮族自治区",
+	"center": "108.320004,22.82402",
+	"count": 850,
+	"subDistricts": []
+}, {
+	"name": "海南省",
+	"center": "110.33119,20.031971",
+	"count": 2500,
+	"subDistricts": []
+}, {
+	"name": "重庆市",
+	"center": "106.504962,29.533155",
+	"count": 3500,
+	"subDistricts": []
+}, {
+	"name": "四川省",
+	"center": "104.065735,30.659462",
+	"count": 6500,
+	"subDistricts": []
+}, {
+	"name": "贵州省",
+	"center": "106.713478,26.578343",
+	"count": 2500,
+	"subDistricts": []
+}, {
+	"name": "云南省",
+	"center": "102.712251,25.040609",
+	"count": 2000,
+	"subDistricts": []
+}, {
+	"name": "西藏自治区",
+	"center": "91.132212,29.660361",
+	"count": 500,
+	"subDistricts": []
+}, {
+	"name": "陕西省",
+	"center": "108.948024,34.263161",
+	"count": 9500,
+	"subDistricts": []
+}, {
+	"name": "甘肃省",
+	"center": "103.823557,36.058039",
+	"count": 4500,
+	"subDistricts": []
+}, {
+	"name": "青海省",
+	"center": "101.778916,36.623178",
+	"count": 3500,
+	"subDistricts": []
+}, {
+	"name": "宁夏回族自治区",
+	"center": "106.278179,38.46637",
+	"count": 2500,
+	"subDistricts": []
+}, {
+	"name": "新疆维吾尔自治区",
+	"center": "87.617733,43.792818",
+	"count": 5500,
+	"subDistricts": []
+}, {
+	"name": "台湾省",
+	"center": "121.509062,25.044332",
+	"count": 25500,
+	"subDistricts": []
+}, {
+	"name": "香港特別行政區",
+	"center": "114.173355,22.320048",
+	"count": 4500,
+	"subDistricts": []
+}, {
+	"name": "澳門特別行政區",
+	"center": "113.54909,22.198951",
+	"count": 102,
+	"subDistricts": []
+}];

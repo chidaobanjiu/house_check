@@ -1,0 +1,1 @@
+var districts = [['铁建大院 ', '玉泉路', '107896元/平米', [{'city': '北京市', 'level': '兴趣点', 'building': {'name': [], 'type': []}, 'citycode': '010', 'location': '116.255967,39.905658', 'province': '北京市', 'number': [], 'neighborhood': {'name': [], 'type': []}, 'formatted_address': '北京市海淀区铁建大院', 'street': [], 'district': '海淀区', 'adcode': '110108', 'township': []}]]]
