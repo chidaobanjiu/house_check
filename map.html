@@ -32,7 +32,7 @@
             autocomplete=new AMap.Autocomplete(autoOptions);
             var placeSearch = new AMap.PlaceSearch{(
                 city:"北京"，
-                map:map,
+                map:map, 
             )}
             AMap.event.addListener(autocomplete, "select", function(e){
                 placeSearch.search(e.poi.name)
