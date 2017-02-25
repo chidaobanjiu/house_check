@@ -35,7 +35,7 @@ def path_with_query(path, query):
     pwq = path + '?' + '&'.join(names)
     return pwq
 
-
+ 
 def parsed_url(url):
     protocol = 'http'
     if 'https://' in url:
