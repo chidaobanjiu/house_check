@@ -33,7 +33,7 @@ def log(*args, **kwargs):
 def path_with_query(path, query):
     pwq = path + query
     return pwq
- 
+
 
 def header_from_dict(headers):
     header_list = []

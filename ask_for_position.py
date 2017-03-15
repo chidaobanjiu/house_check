@@ -14,15 +14,22 @@ def save(data, path):
 
 
 def save(data, path):
-    with open(path, 'w', encoding='utf-8') as f:
-        f.write('var districts = ')
-        f.writelines(str(data))
+    s = json.dumps(data, indent=2, ensure_ascii=False)
+    with open(path, 'w+', encoding='utf-8') as f:
+        # log('save', path, s, data)
+        f.write(s)
 
 
-def load(res):
-    log('load', res)
-    return json.loads(res)
+def load(path):
+    with open(path, 'r', encoding='utf-8') as f:
+        s = f.read()
+        # log('load', s)
+        return json.loads(s)
 
+
+def load_body(body):
+    log('load', body)
+    return json.loads(body)
 
 def log(*args, **kwargs):
     print('log<{}>'.format(time.strftime("%X")), *args, **kwargs)
@@ -35,7 +42,7 @@ def path_with_query(path, query):
     pwq = path + '?' + '&'.join(names)
     return pwq
 
- 
+
 def parsed_url(url):
     protocol = 'http'
     if 'https://' in url:
@@ -107,8 +114,7 @@ def list_to_dict(houses):
 
 
 def get_pos(body):
-    b = load(body)
-    log(type(b['geocodes']))
+    b = load_body(body)
     pos = b['geocodes']
     return pos
 
@@ -135,28 +141,48 @@ def get(url, query):
 def main():
     url = 'http://restapi.amap.com/v3/geocode/geo'
 
-    house = [['铁建大院 ', '玉泉路', '107896元/平米']]
+    house = load('houses.txt')
     path_list = list_to_dict(house)
     log('path_list', path_list)
     get_message = []
-    for i in range(len(house)):
+    for i in range(1000):
         log('i=', i)
         log('pathlist', path_list[i])
         r = get(url, path_list[i])
         body = parsed_response(r)[2]
+        log('body', body)
         get_message.append(body)
         pos = get_pos(body)
-        log(pos)
         house[i].append(pos)
+    save(house, 'housewithlocation{}.txt'.format(i))
+    save(get_message, 'get_message{}.txt'.format(i))
     log('last answer', house)
-    save(house, 'housewithlocation.txt')
     save(get_message, 'get_message.txt')
     log(len(house))
 
 
 if __name__ == '__main__':
     main()
+'''
+l = load('housewithlocation999.txt')
+log(l)
+data = []
+for i in range(1000):
+    l[i][0] = {}
+    dic = l[i][0]
+    dic['name'] = l[i][0]
+    dic['street'] = l[i][1]
+    dic['price'] = l[i][2]
+    dic['district'] = l[i][3][0]['district']
+    dic['location'] = l[i][3][0]['location']
+    dic['formatted_address'] = l[i][3][0]['formatted_address']
+    data.append(dic)
+save(data, 'houses.txt')
+'''
 
+
+
+'''
 {'count': '1',
  'info': 'OK',
  'geocodes': [
@@ -185,3 +211,4 @@ if __name__ == '__main__':
  'infocode': '10000',
  'status': '1'
  }
+'''

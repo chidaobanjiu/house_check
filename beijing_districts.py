@@ -4,4 +4,3 @@ Districts = ['dongcheng', 'xicheng', 'haidian', 'fengtai', 'shijingshan',
              'yanqing', 'yanjiao']
 
 
- 
